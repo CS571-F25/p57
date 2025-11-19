@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 
 
 function Navbar() {
     return (
-        <nav style={{ background: 'blue', passing: '1rem'}}>
+        <nav style={{ background: 'blue', padding: '1rem'}}>
             <ul>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about">About Me</Link></li>
