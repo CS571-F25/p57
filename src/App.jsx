@@ -1,6 +1,7 @@
 import { HashRouter, Routes, Route } from 'react-router'
 
-import Navbar from './components/Navbar'
+
+import NavigationBar from './components/NavigationBar'
 import Games from './components/Games'
 import Reviews from './components/Reviews'
 import Favorites from './components/Favorites'
@@ -13,7 +14,7 @@ import './App.css'
 function App() {
   return (
     <HashRouter>
-      <Navbar /> 
+      <NavigationBar /> 
 
       <Routes>
         <Route path="/" element={<Home />} />
