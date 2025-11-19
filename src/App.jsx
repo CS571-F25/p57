@@ -1,4 +1,11 @@
 import { HashRouter, Routes, Route } from 'react-router'
+import { HashRouter, Routes, Route } from 'react-router-dom'
+
+import Navbar from './components/Navbar'
+import Games from './components/Games'
+import Reviews from './components/Reviews'
+import Favorites from './components/Favorites'
+import Login from './components/Login'
 import Home from './components/Home'
 import AboutMe from './components/AboutMe'
 
