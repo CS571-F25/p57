@@ -1,4 +1,5 @@
 import { HashRouter, Routes, Route } from 'react-router'
+import { Container } from 'react-bootstrap'
 
 
 import NavigationBar from './components/NavigationBar'
@@ -11,11 +12,10 @@ import AboutMe from './components/AboutMe'
 
 import './App.css'
 
-function App() {
+function App() {  
   return (
     <HashRouter>
       <NavigationBar /> 
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutMe />} />
