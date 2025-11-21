@@ -6,12 +6,14 @@ import { Container } from 'react-bootstrap';
 
 export default function Home(props) {
     return (
-    <Container className="mt-5">
+    <Container>
       <h1 className="text-center mb-4">Welcome to PlayForum</h1>
+      <hr className="border border-3 border-dark"/>
 
-      <p>
-        This is the ultimate platform for gamers to share reviews, favorite games, and connect with fellow gaming enthusiasts. Dive into the world of gaming with us!
-      </p>
+      <p>The site to review, log, and share your favorite games with friends. </p>
+
     </Container>
+
+    
   );
 }

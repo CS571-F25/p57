@@ -24,10 +24,11 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  /* Don't center content vertically; let the document flow start at the top. */
   min-width: 320px;
   min-height: 100vh;
+  /* Add top padding to avoid content being hidden behind the fixed navbar. Adjust if your navbar height differs. */
+  padding-top: 56px;
 }
 
 h1 {
@@ -64,5 +65,45 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+/* Center the navbar brand + links as a single group. */
+.navbar .nav-center {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  /* On small screens let the nav flow naturally so items stack or scroll */
+  .navbar .nav-center {
+    position: static;
+    margin: 0;
+    flex-wrap: nowrap;
+  }
+  .navbar .nav-center .navbar-brand {
+    margin-right: 0.5rem;
+  }
+}
+
+/* Games page sidebar: vertical on md+, horizontal scroll on small screens */
+.games-sidebar .list-group {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .games-sidebar .list-group {
+    flex-direction: row;
+    gap: 0.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+  }
+  .games-sidebar .list-group .list-group-item {
+    white-space: nowrap;
   }
 }
