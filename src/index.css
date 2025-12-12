@@ -1,11 +1,18 @@
 :root {
+  --bg: #1f1f1f; /* page background */
+  --surface: #242424; /* cards, panels */
+  --muted: #bfc9c1; /* secondary text */
+  --text: #ffffff; /* main text */
+  --accent: #28c76f; /* green accent */
+  --accent-dark: #1fa85a;
+
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color-scheme: dark;
+  color: var(--text);
+  background-color: var(--bg);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,11 +22,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--accent);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--accent-dark);
 }
 
 body {
@@ -29,6 +36,8 @@ body {
   min-height: 100vh;
   /* Add top padding to avoid content being hidden behind the fixed navbar. Adjust if your navbar height differs. */
   padding-top: 56px;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 h1 {
@@ -43,17 +52,59 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #2a2a2a;
+  color: var(--text);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.15s, background-color 0.15s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--accent-dark);
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+/* Primary buttons (Bootstrap .btn-primary) use the accent color */
+.btn-primary {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #fff !important;
+}
+.btn-primary:hover {
+  background-color: var(--accent-dark) !important;
+  border-color: var(--accent-dark) !important;
+}
+
+/* Outline primary (used for Review button) use accent instead of bootstrap blue */
+.btn-outline-primary {
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  background-color: transparent !important;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  color: #0b0b0b !important;
+  background-color: var(--accent) !important;
+  border-color: var(--accent-dark) !important;
+}
+
+/* Cards / surfaces */
+.card {
+  background-color: var(--surface);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Navbar tweaks for dark theme */
+.navbar-dark .navbar-brand,
+.navbar-dark .nav-link {
+  color: var(--text) !important;
+}
+
+/* Muted text */
+.text-muted { color: var(--muted) !important; }
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -93,6 +144,22 @@ button:focus-visible {
 .games-sidebar .list-group {
   display: flex;
   flex-direction: column;
+}
+
+/* Theme the sidebar list items to match dark surface and green accent */
+.games-sidebar .list-group-item {
+  background-color: var(--surface);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+.games-sidebar .list-group-item:hover {
+  background-color: rgba(255,255,255,0.03);
+}
+.games-sidebar .list-group-item.active,
+.games-sidebar .list-group-item:active {
+  background-color: var(--accent) !important;
+  border-color: var(--accent-dark) !important;
+  color: #0b0b0b !important;
 }
 
 @media (max-width: 767px) {
